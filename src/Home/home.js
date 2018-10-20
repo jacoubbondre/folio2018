@@ -1,8 +1,8 @@
 import React from "react";
+import './home.less'
 
 
-
-class Results extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,4 +22,4 @@ class Results extends React.Component {
   }
 }
 
-export default Results;
+export default Home;
