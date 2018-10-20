@@ -3,7 +3,7 @@ const initState ={
         {id:0, title:'Budweiser', description:'',hasVideo:true,vidURL:'',imageURL:''}
     ]
 }
-const workReducer =(state = initState, action) =>{
+const workReducer =(state = initState, action) => {
     return state
 }
 
