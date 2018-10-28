@@ -1,6 +1,9 @@
 {
     "extends": ["eslint:recommended", "prettier", "prettier/react", "plugin:react/recommended"],
     "plugins": [],
+    "rules": {
+      "react/prop-types": 0
+    },
     "parserOptions": {
       "ecmaVersion": 2016,
       "sourceType": "module",

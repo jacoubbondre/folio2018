@@ -7,11 +7,47 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 1vw;
+    font-size: 3.5vw;
+    color: #f1f1f1;
+    background-color: #333;
+    @media (min-width: 660px) { font-size: 2.75vw; }
+    @media (min-width: 768px) { font-size: 2vw; }
+    @media (min-width: 1024px) { font-size: 1.5vw; }
+    @media (min-width: 1280px) { font-size: 1.25vw; }
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
 h1{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    font-size: 5vw;
+    font-size: 10vw;
+    @media (min-width: 660px) { font-size: 8vw; }
+    @media (min-width: 768px) { font-size: 7vw; }
+    @media (min-width: 1024px) { font-size: 6vw; }
+    @media (min-width: 1280px) { font-size: 5vw; }
 }
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.skew{
+    transform: skewY(10deg);
+    @media (min-width: 768px){
+        transform: skewX(10deg);
+    }
+}
+
+.unskew{
+    transform: skewY(-10deg);
+    @media (min-width: 768px){
+        transform: skewX(-10deg);
+    }
+}
+

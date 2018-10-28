@@ -2,12 +2,12 @@ import React from "react";
 import { render } from "react-dom";
 import { Router, Link } from "@reach/router";
 import Home from "./Home/home";
+//import About from "./About";
+import Work from "./Work/work";
 import './styles/main.less';
 import {createStore} from 'redux';
 import rootReducer from './store/reducers/rootReducer';
 import {Provider} from 'react-redux';
-//import About from "./About";
-//import Work from "./Work";
 //
 //<About path="/about/" />
 //<Work path="/work/:id" />
@@ -18,15 +18,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <h1>Hello World</h1> 
-        </header>
+        <Provider store={store}>
         <Router>
           <Home path="/" />
+          <Work path="/work" />
         </Router>
+        </Provider>
       </div>
     );
   }
 }
 
-render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
+render(<App />, document.getElementById("root"));

@@ -1,0 +1,75 @@
+
+.thumbNail{
+    width: 90%;
+    position: relative;
+    margin-top: 20%;
+    margin-left: 3%;
+    float: left;
+
+    .thumbLabel{
+        position: absolute;
+        left: 0%;
+        top: -5%;
+        text-align: left;
+        h2{
+            font-size: 4vw;
+            padding: 0;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+    }
+
+    .skewPanel{
+        transform: skewY(-10deg);
+        position: relative;
+        //
+        float: left;
+        width: 100%;
+        overflow: hidden;
+        border:none;
+    }
+    .unskewPanel{
+        transform: skewY(10deg);
+        position: relative;
+        width: 100%;
+
+        img{
+            position: relative;
+            width: 140%;
+            left: -20%;
+            top: -8vw;        
+        }
+    }
+    @media (min-width: 768px) { 
+        margin-top: 5%;
+        width: 25vw;
+
+        .thumbLabel{
+            position: absolute;
+            right: -8%;
+            text-align: right;
+            top: -10%;
+            h2{
+                font-size: 2vw;
+            }
+        }
+
+        .skewPanel{
+            transform: skewX(-10deg);
+            //
+            float: left;
+        
+        }
+        .unskewPanel{
+            transform: skewX(10deg);
+            img{
+                position: relative;
+                width: 140%;
+                left: -20%;
+                top: -1vw;        
+            }
+        }
+     }
+}

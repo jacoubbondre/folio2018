@@ -1,0 +1,105 @@
+.panelBtn.skewPanel{
+    transform: skewY(-10deg);
+    position: relative;
+    //
+    float: left;
+    width: 100vw;
+    height: 33vh;
+    overflow: hidden;
+
+    .unskewPanel{
+        transform: skewY(10deg);
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .skewBackground{
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        margin: auto;
+        left: -25%;
+        top:-25%;
+    }
+    
+    .navBtn{
+        position: relative;
+        display: table;
+        margin: auto;
+        top: 50%;
+        transform: perspective(1px) translateY(-50%);
+        border: none;
+        background: none;
+        color: white;
+        text-align: left;
+        .navBtnHeader{
+            position: relative;
+            font-weight: 100;
+            font-size: 4vw;
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .tagLine{
+            position: relative;
+            font-weight: 100;
+            padding: 0;
+            margin: 0;
+            margin-left: 3px;
+        }
+        
+    }
+    .navRule{
+        width: 3vw;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+#Work{
+    .skewBackground{
+        background-color: #02466a;
+    }
+    .navRule{
+        margin-left: 5px;
+        margin-bottom: 7px;
+    }
+}
+#About{
+    .skewBackground{
+        background-color: #013e5f;
+    }
+    .navRule{
+        margin-left: -1px;
+        margin-bottom: 7px;
+    }
+}
+
+#Contact{
+    .skewBackground{
+        background-color: #0f434b;
+    }
+    .navRule{
+        margin-left: 1px;
+        margin-bottom: 7px;
+    }
+}
+
+
+
+@media (min-width: 768px) { 
+    .panelBtn.skewPanel{
+        transform: skewX(-10deg);
+        //
+        float: left;
+        width: 33%;
+        height: 100vh;
+        
+        .unskewPanel{
+            transform: skewX(10deg);
+        }
+    }
+    
+ }
