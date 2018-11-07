@@ -3,6 +3,7 @@ import ThumbButton from '../components/ThumbButton/thumbButton';
 import './work.less';
 import $ from 'jquery';
 import {connect} from 'react-redux';
+import {TweenLite, CSSPlugin, Power3} from "gsap/all";
 
 
 class Work extends React.Component {
@@ -14,16 +15,15 @@ class Work extends React.Component {
     };
   }
   componentDidMount() {
-   //
-   
-
-
+    var bdy = $('body');
+    var bgColor = "#333";
+    TweenLite.to( bdy, 1.5, { backgroundColor:bgColor, ease:Power3.easeOut});
   }
   render() {
 
     const itemsToRender = this.props.work.map((brand) => {
       return (
-        <ThumbButton brandName={brand.title} imgURL={brand.imageURL} />
+        <ThumbButton key={brand.id} buttonID={brand.id} brandName={brand.title} imgURL={brand.imageURL} />
       )
 
   })

@@ -4,6 +4,7 @@ import { Router, Link } from "@reach/router";
 import Home from "./Home/home";
 //import About from "./About";
 import Work from "./Work/work";
+import Brands from "./Brands/brands"
 import './styles/main.less';
 import {createStore} from 'redux';
 import rootReducer from './store/reducers/rootReducer';
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Router>
           <Home path="/" />
           <Work path="/work" />
+          <Brands path="/work/:id" />
         </Router>
         </Provider>
       </div>
