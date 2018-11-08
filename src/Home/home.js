@@ -2,6 +2,7 @@ import React from "react";
 import PanelButton from '../components/PanelButton/panelButton';
 import './home.less';
 import $ from 'jquery';
+import {TweenLite,  Power3} from "gsap/all";
 
 
 class Home extends React.Component {
@@ -20,32 +21,15 @@ class Home extends React.Component {
    var _work = this.work.current;
    var  _about = this.about.current;
    var _contact = this.contact.current;
-   _work.buildAnimation(.1);
-   _about.buildAnimation(.3);
-   _contact.buildAnimation(.5);
+   //
    
-   //Define Over and Out Handlers
-    $('#Work').mouseover(function(){
-      _work.rollOverAnimation(0);
-    });
-    $('#Work').mouseout(function(){
-      _work.rollOutAnimation(0);
-    });
-    //
-    $('#About').mouseover(function(){
-      _about.rollOverAnimation(0);
-    });
-    $('#About').mouseout(function(){
-      _about.rollOutAnimation(0);
-    });
-    //
-    $('#Contact').mouseover(function(){
-      _contact.rollOverAnimation(0);
-    });
-    $('#Contact').mouseout(function(){
-      _contact.rollOutAnimation(0);
-    });
-
+   var bdy = $('body');
+   var bgColor = "#333";
+   TweenLite.to( bdy, 1.5, { backgroundColor:bgColor, ease:Power3.easeOut});
+   //
+   _work.buildAnimation(0.6);
+   _about.buildAnimation(.9);
+   _contact.buildAnimation(1.2);
 
   }
   render() {

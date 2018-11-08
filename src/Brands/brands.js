@@ -3,7 +3,7 @@ import './brands.less';
 import $ from 'jquery';
 import Parser from 'html-react-parser';
 import {connect} from 'react-redux';
-import {TweenLite, CSSPlugin, Power3} from "gsap/all";
+import {TweenLite,  Power3} from "gsap/all";
 import { Router, Redirect } from "@reach/router"; 
 
 
@@ -32,6 +32,34 @@ class Brands extends React.Component {
       var bgColor = this.state.brand.bgColor;
       TweenLite.to( bdy, 1.5, { backgroundColor:bgColor, ease:Power3.easeOut});
     }
+    this.initValues()
+  }
+
+  initValues(){
+    $(".mainImage").css('top','25px');
+    $(".mainImage").css('opacity','0');
+    //
+    $(".vidHolder").css('top','25px');
+    $(".vidHolder").css('opacity','0');
+    //
+    $(".bodyCopy").css('top','25px');
+    $(".bodyCopy").css('opacity','0');
+    //
+    $(".highlights").css('top','25px');
+    $(".highlights").css('opacity','0');
+
+    this.buildAnimation();
+  }
+
+  buildAnimation = (d = 0) => {
+    //
+    TweenLite.to( $(".mainImage"), 1, {delay:d, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
+    TweenLite.to( $(".bodyCopy"), 1, {delay:d+.25, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
+    TweenLite.to( $(".highlights"), 1, {delay:d+.5, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
+    if(this.state.brand.hasVideo){
+      TweenLite.to( $(".vidHolder"), 1, {delay:d+.75, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
+    }
+  
   }
   render() {
     

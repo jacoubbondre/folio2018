@@ -5,6 +5,7 @@ import Home from "./Home/home";
 //import About from "./About";
 import Work from "./Work/work";
 import Brands from "./Brands/brands"
+import Navigation from "./components/Navigation/navigation";
 import './styles/main.less';
 import {createStore} from 'redux';
 import rootReducer from './store/reducers/rootReducer';
@@ -19,6 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Navigation />
         <Provider store={store}>
         <Router>
           <Home path="/" />

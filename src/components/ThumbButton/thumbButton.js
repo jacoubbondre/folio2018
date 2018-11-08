@@ -1,7 +1,7 @@
 import React from "react";
 import './thumbButton.less';
 import $ from 'jquery';
-import {TweenLite, CSSPlugin, Power3} from "gsap/all";
+import {TweenLite,  Power3} from "gsap/all";
 import {Link} from '@reach/router';
 
 
