@@ -95,20 +95,20 @@ class Brands extends React.Component {
         //
         if(this.state.brand.hasVideo){
           return (
-            <React.Fragment>
+          <div className='brandWrapper'>
             {mainImg}
             {bodyCopy}
             {highlights}
             {video}
-          </React.Fragment>
+          </div>
           );
         } else {
           return(
-          <React.Fragment>
+          <div className='brandWrapper'>
             {mainImg}
             {bodyCopy}
             {highlights}
-          </React.Fragment>
+          </div>
           );
         }
       } else {
