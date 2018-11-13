@@ -1,3 +1,5 @@
+@aspect-ratio:  (min-aspect-ratio : 1/1);
+
 .panelBtn.skewPanel{
     transform: skewY(-10deg);
     position: relative;
@@ -35,6 +37,7 @@
         background: none;
         color: white;
         pointer-events: none;
+        padding-left: 2vw;
         .navBtnHeader{
             position: relative;
             font-weight: 100;
@@ -62,7 +65,7 @@
         margin: 0;
         pointer-events: none;
     }
-    @media (min-width: 769px) and (max-height:1024px) { 
+    @media @aspect-ratio  { 
         
         transform: skewX(-10deg);
         //
@@ -91,7 +94,7 @@
 
 #Work{
     padding-top:15px;
-    @media (min-width: 769px) { padding-top:0px; }
+    @media @aspect-ratio {  padding-top:0px; }
 
     .skewBackground{
         background-color: #02466a;

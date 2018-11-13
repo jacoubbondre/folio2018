@@ -1,3 +1,5 @@
+@aspect-ratio:  (min-aspect-ratio : 1/1);
+
 html{
     padding: 0;
     margin: 0;
@@ -33,14 +35,14 @@ h1{
 
 .skew{
     transform: skewY(10deg);
-    @media (min-width: 768px){
+    @media @aspect-ratio{
         transform: skewX(10deg);
     }
 }
 
 .unskew{
     transform: skewY(-10deg);
-    @media (min-width: 768px){
+    @media @aspect-ratio{
         transform: skewX(-10deg);
     }
 }
