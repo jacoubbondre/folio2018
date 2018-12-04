@@ -50,8 +50,7 @@ class panelButton extends React.Component {
   rollOverAnimation = (d) =>{
     if(this.state.buildDone){
       var tagLength = 0;
-      var winRatio = $(window).innerWidth() / $(window).innerHeight()
-      console.log(winRatio);
+      var winRatio = $(window).innerWidth() / $(window).innerHeight();
       if(winRatio > 1 ){//if($(window).innerWidth() >= 768 ){
         tagLength = 3;
       } else {

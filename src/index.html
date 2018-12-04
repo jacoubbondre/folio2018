@@ -5,13 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Jacouhb Bondre's React/Redux Template</title>
+  <title>Jacoub Bondre - Creative . Technology . Strategy</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,700,900|Roboto:100,300,400,700,900" rel="stylesheet">
 </head>
 
+
+
 <body>
   <canvas id="canvas"></canvas>
-  <div id="root">not rendered</div>
+  <div id="root"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
   <script src="./App.js"></script>
   <script>
     let resizeReset = function() {
@@ -23,12 +25,12 @@
     const opts = { 
       particleColor: window.pColor,
       lineColor: window.lColor,
-      particleAmount: 50,
+      particleAmount: 25,
       defaultSpeed: .3,
       variantSpeed: 1,
       defaultRadius: 2,
       variantRadius: 2,
-      linkRadius: 350,
+      linkRadius: 400,
     };
 
     window.addEventListener("resize", function(){

@@ -32,7 +32,10 @@ class Brands extends React.Component {
       var bgColor = this.state.brand.bgColor;
       TweenLite.to( bdy, 1.5, { backgroundColor:bgColor, ease:Power3.easeOut});
     }
-    this.initValues()
+    //Scroll Back to top
+    TweenLite.to(window, .5, {delay:0, ease: Power2.easeOut, scrollTo:0});
+    //
+    this.initValues();
   }
 
   initValues(){
@@ -45,7 +48,6 @@ class Brands extends React.Component {
     $(".bodyCopy").css('top','25px');
     $(".bodyCopy").css('opacity','0');
     //
-    $(".highlights").css('top','25px');
     $(".highlights").css('opacity','0');
 
     this.buildAnimation();
@@ -55,7 +57,7 @@ class Brands extends React.Component {
     //
     TweenLite.to( $(".mainImage"), 1, {delay:d, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
     TweenLite.to( $(".bodyCopy"), 1, {delay:d+.25, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
-    TweenLite.to( $(".highlights"), 1, {delay:d+.5, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
+    TweenLite.to( $(".highlights"), 1, {delay:d+.5, css:{ opacity:1 }, ease:Power3.easeOut});
     if(this.state.brand.hasVideo){
       TweenLite.to( $(".vidHolder"), 1, {delay:d+.75, css:{top:"0", opacity:1 }, ease:Power3.easeOut});
     }
@@ -69,7 +71,7 @@ class Brands extends React.Component {
         <div className="mainImage">
           <div className="skewPanel">
             <div className="unskewPanel">
-              <img src={this.state.brand.imageURL} />
+              <img src={this.state.brand.imageURL} alt={this.state.brand.title} />
             </div>
           </div>
         </div>;
@@ -81,15 +83,21 @@ class Brands extends React.Component {
         //
         const bodyCopy =
         <div className="bodyCopy skew">
+        <h2>OVERVIEW</h2>
           <div className="unskew">
-            {Parser(this.state.brand.description)}
+            <div className="body-midFloat">
+              {Parser(this.state.brand.description)}
+            </div>
           </div>
         </div>;
         //
         const highlights =
         <div className="highlights unskew">
+        <h2>HIGHLIGHTS</h2>
           <div className="skew">
-            {Parser(this.state.brand.highlights)}
+            <div className="body-midFloat">
+              {Parser(this.state.brand.highlights)}
+            </div>
           </div>
         </div>;
         //

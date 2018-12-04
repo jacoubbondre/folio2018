@@ -61,10 +61,10 @@ class thumbButton extends React.Component {
     return (
       <Link to={ brndStr }>
       <div id={"thumb"+this.props.buttonID} className="thumbNail" onMouseOver={this.rollOverAnimation} onMouseOut={this.rollOutAnimation}>
-        <div className="thumbLabel skew"><h2>{this.props.brandName}</h2></div>
+        <div className="thumbLabel skew"><h2>{this.props.brandTitle}</h2></div>
         <div id={ this.props.buttonID } className="skewPanel">
           <div className="unskewPanel">
-            <img src={this.props.imgURL} />
+            <img src={this.props.imgURL} alt={this.props.brandTitle} />
           </div>
         </div>
       </div>

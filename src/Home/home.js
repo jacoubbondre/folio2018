@@ -35,7 +35,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="navHolder">
-        <PanelButton ref={this.work} panelID="Work" title="Work" tagLine="some of my favorite pieces" />
+        <PanelButton ref={this.work} panelID="Work" title="Work" tagLine="brands I've loved before" />
         <PanelButton ref={this.about} panelID="About" title="Modus<br />Operandi" tagLine="how I do what I do" />
         <PanelButton ref={this.contact} panelID="Contact" title="Engage" tagLine="how can I help?" />
       </div>

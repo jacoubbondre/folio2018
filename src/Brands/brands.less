@@ -3,7 +3,7 @@
 .brandWrapper{
     position: relative;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 
     .highlights{
         background-color: rgba(255,255,255,.75);;
@@ -12,30 +12,52 @@
         position: relative;
         right: -10%;
         margin-top: -3%;
+        h2{
+            margin: 0;
+            padding:5%;
+            padding-bottom:10%;
+            text-transform: uppercase;
+        }
         .skew{
             padding:10%;
-            //
-            h2{
-                text-transform: uppercase;
-            }
             ul{
                 padding: 0;
-                padding-bottom:15px;
-                margin-left: 10%;
+                padding-bottom: 15px;
+                margin-left: 5%;
+                max-width: 80%;
+                li {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    padding-bottom:15px;
+                    font-size: 2.5vw;
+                }
             }
         }
+        .body-midFloat{
+            top: 37.5%;
+            transform: translateY(-25%);
+        }
+    
     }
 
+    
+
+    .body-midFloat {
+            position: relative;
+            transform: translateY(-5%);
+            min-width: 55%;
+            max-width: 80%;
+    }
 
     .bodyCopy{
         padding: 5%;
         padding-left: 10%;
         position: relative;
         left: -10%;
-        background-color: rgba(50,50,50,.90);
+        background-color: rgba(50, 50, 50, 0.9);
         margin-left: 5%;
         margin-top: -3%;
-        z-index: 2;
+        z-index: 3;
         .unskew{
             padding:3%;
         }
@@ -44,7 +66,7 @@
     .vidHolder{
         position: relative;
         margin: 0;
-        margin-top: -3%;
+        margin-top: -10%;
         padding-bottom: 25%;
     }
 
@@ -82,7 +104,9 @@
                 position: absolute;
                 width: 120%;
                 left: -5%;  
-                top:-16%;    
+                top:-16%;
+                margin-top: -5%;
+                margin-left: -5%;    
             }
         }
         @media @aspect-ratio { 
@@ -113,6 +137,194 @@
 
 
     // Generated Responsive Vimeo Embed CSS
-    .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .embed-container { 
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0;
+        overflow: 
+        hidden; 
+        max-width: 100%;
+     } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 5%; width: 90%; height: 100%; }
 
 }
+
+@supports not (-ms-ime-align:auto){
+    //Put Grid CSS here
+    .brandWrapper{
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+        grid-column-gap: 1vw;
+        grid-template-areas:
+        "mainImg mainImg"
+        "bodyCopy bodyCopy"
+        "highlights highlights"
+        "video video";
+
+
+        @media only screen and (min-width: 768px){
+            
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+            grid-template-areas:
+                "mainImg mainImg"
+                "mainImg mainImg"
+                "mainImg mainImg"
+                "video bodyCopy"
+                "video bodyCopy"
+                "highlights bodyCopy"
+                "highlights bodyCopy"
+                "space space2";
+
+                .highlights{
+                    top:-10rem;
+                    .skew{
+                        ul {
+                            padding: 0;
+                            padding-bottom: 15px;
+                            max-width: 60%;
+                            font-size: 1.75vw;
+                            li {
+                                text-transform: uppercase;
+                                font-weight: 700;
+                                padding-bottom:15px;
+                                font-size: 1.5vw;
+                            }
+                        }
+                    } 
+                }
+        }
+    
+        .highlights{
+            grid-area: highlights;
+            background-color: rgba(255,255,255,.75);;
+            color: #333;
+            width: 100%;
+            position: relative;
+            right: -10%;
+            z-index: 2;
+
+            .body-midFloat {
+                position: absolute;
+                top: 25%;
+                transform: translateY(-50%);
+            }
+
+            .skew{
+                padding:10%;
+                position: relative;
+                height: 100%;
+                //
+                
+                ul{
+                    padding: 0;
+                    padding-bottom:15px;
+                }
+            }
+        }
+
+        
+        .body-midFloat {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            min-width: 55%;
+            max-width: 80%;
+        }
+    
+        .bodyCopy{
+            grid-area: bodyCopy;
+            padding: 5%;
+            padding-left: 10%;
+            position: relative;
+            left: -10%;
+            background-color: rgba(50,50,50,.90);
+            margin-left: 5%;
+            margin-top: -3%;
+            .unskew{
+                padding:3%;
+                height: 100%;
+                position: relative;
+            }
+        }
+    
+        .vidHolder{
+            grid-area: video;
+            position: relative;
+            margin: 0;
+            margin-top: -10%;
+            padding-bottom: 25%;
+            z-index: 3;
+        }
+    
+        .mainImage{
+            grid-area: mainImg;
+            width: 90%;
+            position: relative;
+            right:-5%;
+            padding: 10%;
+            padding-top: 20%;
+            padding-bottom:0;
+            z-index: 3;
+            @media @aspect-ratio {
+                
+            padding: 10%;
+            padding-bottom:0;
+            }
+    
+            .skewPanel{
+                transform: skewY(-10deg);
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                border:none;
+                border-width: 5px;
+            }
+            .unskewPanel{
+                transform: skewY(10deg);
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                padding-top: 57%;
+    
+                img{
+                    position: absolute;
+                    width: 120%;
+                    left: -5%;  
+                    top:-16%;    
+                }
+            }
+            @media @aspect-ratio { 
+    
+                .thumbLabel{
+                    position: absolute;
+                    right: -9%;
+                    text-align: right;
+                    top: -12%;
+                    h2{
+                        font-size: 2vw;
+                    }
+                }
+    
+                .skewPanel{
+                    transform: skewX(-10deg);
+                
+                }
+                .unskewPanel{
+                    transform: skewX(10deg);
+                    img{
+                    top:-5%;   
+                    }
+                }
+            }
+        }
+    
+    
+    
+        }
+}
+

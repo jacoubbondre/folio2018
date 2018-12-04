@@ -1,12 +1,12 @@
 import React from "react";
-import ThumbButton from '../components/ThumbButton/thumbButton';
-import './work.less';
+import Parser from 'html-react-parser';
+import './about.less';
 import $ from 'jquery';
 import {connect} from 'react-redux';
 import {TweenLite, Power3} from "gsap/all";
 
 
-class Work extends React.Component {
+class About extends React.Component {
   constructor(props) {
     super(props);
 
@@ -16,24 +16,26 @@ class Work extends React.Component {
   }
   componentDidMount() {
     var bdy = $('body');
-    var bgColor = "#02466a";
+    var bgColor = "#013e5f";
     TweenLite.to( bdy, 1.5, { backgroundColor:bgColor, ease:Power3.easeOut});
     //Scroll Back to top
     TweenLite.to(window, .5, {delay:0, ease: Power2.easeOut, scrollTo:0});
     //
+    this.initValues();
   }
+
+  initValues(){
+    $('.aboutSection').css('opacity',0);
+    $('.aboutSection').css('top','25px');
+    
+    TweenLite.to($('.aboutSection'), 1, {delay:.3, ease: Power2.easeOut, top:0,opacity:1});
+  }
+
   render() {
 
-    const itemsToRender = this.props.work.map((brand) => {
-      return (
-        <ThumbButton key={brand.id} buttonID={brand.id} brandTitle={brand.title} brandName={brand.brandName} imgURL={brand.imageURL} />
-      )
-
-  })
-
     return (
-      <div className="thumbHolder">
-        {itemsToRender}
+      <div className="aboutSection">
+      {Parser(this.props.body[0].copy)}
       </div>
     );
   }
@@ -41,8 +43,8 @@ class Work extends React.Component {
  
 const mapStateToProps = (state) =>{
   return{
-    work: state.work.brand
+    body: state.about.body
   }
 }
 
-export default connect(mapStateToProps)(Work);
+export default connect(mapStateToProps)(About);

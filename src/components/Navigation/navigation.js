@@ -53,13 +53,13 @@ class Navigation extends React.Component {
     return (
 
       <header>
+      <Link to='../'>
           <div id="SiteTitle" className="navBtn skewX">
             <div className="unskewX">
               <p className="title">Jacoub Alexander Bondre</p>
               <p className="subtitle">Creative . Technology . Strategy</p>
             </div>
           </div>
-        <Link to='../'>
           <div id="Nav" className="navBtn skewX">
             <div className="unskewX"><img src={navImg} alt="navigation" /></div>
           </div>
