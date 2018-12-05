@@ -23,6 +23,7 @@
             ul{
                 padding: 0;
                 padding-bottom: 15px;
+                margin-top: 0;
                 margin-left: 5%;
                 max-width: 80%;
                 li {
@@ -164,40 +165,6 @@
         "highlights highlights"
         "video video";
 
-
-        @media only screen and (min-width: 768px){
-            
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
-            grid-template-areas:
-                "mainImg mainImg"
-                "mainImg mainImg"
-                "mainImg mainImg"
-                "video bodyCopy"
-                "video bodyCopy"
-                "highlights bodyCopy"
-                "highlights bodyCopy"
-                "space space2";
-
-                .highlights{
-                    top:-10rem;
-                    .skew{
-                        ul {
-                            padding: 0;
-                            padding-bottom: 15px;
-                            max-width: 60%;
-                            font-size: 1.75vw;
-                            li {
-                                text-transform: uppercase;
-                                font-weight: 700;
-                                padding-bottom:15px;
-                                font-size: 1.5vw;
-                            }
-                        }
-                    } 
-                }
-        }
-    
         .highlights{
             grid-area: highlights;
             background-color: rgba(255,255,255,.75);;
@@ -262,7 +229,7 @@
     
         .mainImage{
             grid-area: mainImg;
-            width: 90%;
+            width: 100%;
             position: relative;
             right:-5%;
             padding: 10%;
@@ -274,6 +241,12 @@
             padding: 10%;
             padding-bottom:0;
             }
+            /*@media only screen and (min-width: 768px){
+                width: 80%;
+                max-width: 768px;
+                left:50%;
+                transform: translateX(-50%);
+            }*/
     
             .skewPanel{
                 transform: skewY(-10deg);
@@ -322,9 +295,76 @@
                 }
             }
         }
-    
-    
-    
+
+
+        @media only screen and (min-width: 768px){
+
+            width: 85%;
+            max-width: 1024px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            font-size: .80em;
+            
+            grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+            grid-template-areas:
+                "mainImg mainImg"
+                "mainImg mainImg"
+                "mainImg mainImg"
+                "mainImg mainImg"
+                "video bodyCopy"
+                "video bodyCopy"
+                "video bodyCopy"
+                "highlights bodyCopy"
+                "highlights bodyCopy"
+                "space bodyCopy"
+                "space space2";
+
+                .mainImage{
+                    width: 75%;
+                }
+
+                .highlights{
+                    top:-5.5rem;
+                    .skew{
+                        ul {
+                            padding: 0;
+                            padding-bottom: 15px;
+                            li {
+                                text-transform: uppercase;
+                                font-weight: 700;
+                                padding-bottom:10px;
+                                font-size: .7em;
+                            }
+                        }
+                    } 
+                }
+                .embed-container { 
+                    position: relative; 
+                    padding-bottom: 65%; 
+                    height: 0;
+                    overflow: 
+                    hidden; 
+                    width: 110%;
+                 } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 5%; width: 90%; height: 100%; }
+            
         }
+
+        @media only screen and (min-width: 1220px){
+
+            font-size: 17px;
+
+                .highlights{
+                    .skew{
+                        ul {
+                            li {
+                                font-size: 13px;
+                            }
+                        }
+                    } 
+                }
+        }
+    }
 }
 
