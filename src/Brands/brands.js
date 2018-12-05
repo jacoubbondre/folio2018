@@ -83,7 +83,7 @@ class Brands extends React.Component {
         //
         const bodyCopy =
         <div className="bodyCopy skew">
-        <h2>OVERVIEW</h2>
+        <h2>OVERVIEW - {this.state.brand.title}</h2>
           <div className="unskew">
             <div className="body-midFloat">
               {Parser(this.state.brand.description)}
