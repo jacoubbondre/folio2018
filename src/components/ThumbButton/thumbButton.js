@@ -54,14 +54,13 @@ class thumbButton extends React.Component {
 
   render() {
     //skewPanel is the outer container that is skewed
-    //unskew sets everything straight again.
+    //unskew sets everything straight again. - <div className="thumbLabel skew"><h2>{this.props.brandTitle}</h2></div>
     //Panel Back is the background color, I want that to scale independantly
     var brndStr = this.props.brandName;
     brndStr = brndStr.toLowerCase();
     return (
       <Link to={ brndStr }>
       <div id={"thumb"+this.props.buttonID} className="thumbNail" onMouseOver={this.rollOverAnimation} onMouseOut={this.rollOutAnimation}>
-        <div className="thumbLabel skew"><h2>{this.props.brandTitle}</h2></div>
         <div id={ this.props.buttonID } className="skewPanel">
           <div className="unskewPanel">
             <img src={this.props.imgURL} alt={this.props.brandTitle} />
